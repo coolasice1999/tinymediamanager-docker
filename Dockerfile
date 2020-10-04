@@ -5,10 +5,10 @@ FROM jlesage/baseimage-gui:alpine-3.12-glibc
 
 # Define software versions.
 ARG JAVAJRE_VERSION=8.265.01.1
-ARG TMM_VERSION=3.1.10
+ARG TMM_VERSION=4.0.3
 
 # Define software download URLs.
-ARG TMM_URL=http://release.tinymediamanager.org/v3/dist/tmm_${TMM_VERSION}_linux.tar.gz
+ARG TMM_URL=http://release.tinymediamanager.org/v4/dist/tmm_${TMM_VERSION}_linux.tar.gz
 ARG JAVAJRE_URL=https://corretto.aws/downloads/resources/${JAVAJRE_VERSION}/amazon-corretto-${JAVAJRE_VERSION}-linux-x64.tar.gz
 ENV JAVA_HOME=/opt/jre/bin
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jre/bin
@@ -43,7 +43,7 @@ RUN \
 # Maximize only the main/initial window.
 # It seems this is not needed for TMM 3.X version.
 #RUN \
-#    sed-patch 's/<application type="normal">/<application type="normal" title="tinyMediaManager \/ 3.0.2">/' \
+#    sed-patch 's/<application type="normal">/<application type="normal" title="tinyMediaManager \/ 4.0.3">/' \
 #        /etc/xdg/openbox/rc.xml
 
 # Generate and install favicons.
@@ -68,5 +68,5 @@ LABEL \
       org.label-schema.name="tinymediamanager" \
       org.label-schema.description="Docker container for TinyMediaManager" \
       org.label-schema.version="unknown" \
-      org.label-schema.vcs-url="https://github.com/romancin/tmm-docker" \
+      org.label-schema.vcs-url="https://github.com/coolasice1999/tmm-docker" \
       org.label-schema.schema-version="1.0"
