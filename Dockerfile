@@ -56,7 +56,7 @@ COPY rootfs/ /
 COPY VERSION /
 
 # Set environment variables.
-ENV APP_NAME="TinyMediaManager" \
+ENV APP_NAME="tinyMediaManager" \
     S6_KILL_GRACETIME=8000
 
 # Define mountable directories.
