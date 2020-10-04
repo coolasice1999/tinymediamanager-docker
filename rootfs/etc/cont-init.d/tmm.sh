@@ -10,7 +10,7 @@ log() {
 # Make sure mandatory directories exist.
 mkdir -p /config/logs
 
-if [ ! -f /config/tmm.jar ]; then
+if [ ! -f /config/tinyMediaManager ]; then
     cp -r /defaults/* /config/
     cd /config
     tar zxvf /config/tmm.tar.gz
