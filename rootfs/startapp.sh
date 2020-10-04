@@ -15,12 +15,12 @@ getpid_tmm() {
         PID="$(cat /config/tmm.pid)"
         # Make sure the saved PID is still running and is associated to
         # TinyMediaManager.
-        if [ ! -f /proc/$PID/cmdline ] || ! cat /proc/$PID/cmdline | grep -qw "tinyMediaManager"; then
+        if [ ! -f /proc/$PID/cmdline ] || ! cat /proc/$PID/cmdline | grep -qw "tmm.jar"; then
             PID=UNSET
         fi
     fi
     if [ "$PID" = "UNSET" ]; then
-        PID="$(ps -o pid,args | grep -w "tinyMediaManager" | grep -vw grep | tr -s ' ' | cut -d' ' -f2)"
+        PID="$(ps -o pid,args | grep -w "tmm.jar" | grep -vw grep | tr -s ' ' | cut -d' ' -f2)"
     fi
     echo "${PID:-UNSET}"
 }
@@ -30,7 +30,7 @@ is_tmm_running() {
 }
 
 start_tmm() {
-        /config/tinyMediaManager
+        /opt/jre/bin/java -Dsilent=noupdate -jar /config/getdown.jar /config > /config/logs/output.log 2>&1 &
 }
 
 kill_tmm() {
