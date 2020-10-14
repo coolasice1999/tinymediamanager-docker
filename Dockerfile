@@ -4,7 +4,7 @@
 FROM jlesage/baseimage-gui:alpine-3.12-glibc
 
 # Define software versions.
-ARG JAVAJRE_VERSION=8.265.01.1
+ARG JAVAJRE_VERSION=8.265.01.2
 ARG TMM_VERSION=4.0.3
 
 # Define software download URLs.
