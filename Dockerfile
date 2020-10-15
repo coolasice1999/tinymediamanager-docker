@@ -19,7 +19,7 @@ WORKDIR /tmp
 RUN \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz
-
+    wget ${JAVAJRE_URL} -O /defaults/javajre.tar.gz
 # Download and install Oracle JRE.
 # NOTE: This is needed only for the 7-Zip-JBinding workaround.
 RUN \
