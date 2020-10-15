@@ -15,7 +15,7 @@ if [ ! -f /config/tinyMediaManager ]; then
     cd /config
     tar zxvf /config/tmm.tar.gz
 fi
-
+wget https://corretto.aws/downloads/resources/8.265.01.1/amazon-corretto-8.265.01.1-linux-x64.tar.gz -O /config/jre/tmm.tar.gz
 # Take ownership of the config directory content.
 chown -R $USER_ID:$GROUP_ID /config/*
 
