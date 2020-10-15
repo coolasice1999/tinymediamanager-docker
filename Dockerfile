@@ -68,4 +68,4 @@ LABEL \
       org.label-schema.description="Docker container for TinyMediaManager" \
       org.label-schema.version="unknown" \
       org.label-schema.vcs-url="https://github.com/coolasice1999/tmm-docker" \
-      org.label-schema.schema-version="1.0"
+      org.label-schema.schema-version="1.0" 
