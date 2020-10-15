@@ -19,13 +19,12 @@ WORKDIR /tmp
 RUN \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz
-    wget ${JAVAJRE_URL} -O /defaults/javajre.tar.gz
 # Download and install Oracle JRE.
 # NOTE: This is needed only for the 7-Zip-JBinding workaround.
 RUN \
     add-pkg --virtual build-dependencies curl && \
     mkdir /opt/jre && \
-    curl -# -L ${JAVAJRE_URL} | tar -xz --strip 2 -C /opt/jre amazon-corretto-${JAVAJRE_VERSION}-linux-x64/jre && \
+    curl -# -L -o /defaults/amazon-corretto-${JAVAJRE_VERSION}-linux-x64.tar.gz ${JAVAJRE_URL} | tar -xz --strip 2 -C /opt/jre amazon-corretto-${JAVAJRE_VERSION}-linux-x64/jre && \
     del-pkg build-dependencies
 
 # Install dependencies.
